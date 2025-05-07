@@ -10,6 +10,8 @@ export class BookService {
   constructor() { }
 
   addBook(book: Book): Observable<Book> {
-    return of(book);
+    const err = new Error('Book not found');
+    return throwError(() => err);
+    // return of(book);
   }
 }
